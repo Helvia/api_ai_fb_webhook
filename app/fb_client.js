@@ -148,7 +148,7 @@ function sendCardMessage(recipientId, title, subtitle, imageUrl, buttons) {
                 payload: {
                     template_type: "generic",
                     elements: [{
-                        title: title,
+                        title: title || 'Please choose one:',
                         subtitle: subtitle,
                         image_url: imageUrl,
                         buttons: buttons

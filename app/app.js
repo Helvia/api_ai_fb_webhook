@@ -22,7 +22,7 @@ const sessionIds = new Map();
 /**
  * Process an incoming event from facebook
  *
- * @param sender The ID of the user messaging with Maia.
+ * @param event
  */
 function processFacebookEvent(event) {
 
@@ -133,7 +133,6 @@ app.post('/test-apiai-callback/', function (req, res) {
             error: err
         });
     }
-
 });
 
 // Start web server

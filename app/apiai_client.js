@@ -50,7 +50,7 @@ function sendResponse(sender, message, callback) {
         case 0: // message text
             fbClient.sendSplitMessages(sender, message.speech);
             break;
-        case 1: // message text
+        case 1: // card
             var buttons = [];
             if (misc.isDefined(message.buttons)) {
                 async.eachSeries(message.buttons, (button, innerCallback) => {
@@ -61,7 +61,6 @@ function sendResponse(sender, message, callback) {
                     });
                     innerCallback();
                 });
-                console.info(buttons);
             }
             fbClient.sendCardMessage(sender, message.title, message.subtitle, message.imageUrl, buttons);
             break;
