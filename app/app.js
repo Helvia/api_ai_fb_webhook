@@ -40,7 +40,14 @@ function processFacebookEvent(event) {
         console.log("Got text from Facebook: ", text);
 
         fbClient.userInfoRequest(sender)
-            .then(userInfo => {
+            .then(userInfoStr=> {
+                // Initialize userInto
+                let userInfo = {first_name: "friend"};
+                try {
+                    var userInfo = JSON.parse(userInfoStr);
+                } catch (err) {
+                    console.error("Could not parse userInfoStr: %s", userInfoStr)
+                }
                 let apiaiRequest = apiAiService.textRequest(text,
                     {
                         sessionId: sessionIds.get(sender),
