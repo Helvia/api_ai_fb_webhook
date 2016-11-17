@@ -1,19 +1,25 @@
 # api-ai-fb-webhook
-API.ai Facebook Integration Webhook
 
-## Abstract
 This is a webhook implementation that connects Facebook Messenger Apps (chatbots) to [API.ai](https://api.ai).
 
-_This work was inspired by api.ai's example webhook at https://github.com/api-ai/api-ai-facebook._
+*This work was inspired by api.ai's example webhook at https://github.com/api-ai/api-ai-facebook.*
 
 ## Running locally (for testing purposes)
-To run locally, you need:
+
+Software Dependencies:
 
 1. Node v6.0.0
-2. 
+2. npm v3.8.6
+
+To run locally do:
 
 1. Clone this repository to your machine
-2. Install node packages
+2. Install node packages with `npm install`
+3. Ensure the following environment variables are set:
+    * APIAI_ACCESS_TOKEN="Your API.AI client access token"
+    * FB_PAGE_ACCESS_TOKEN="Your Facebook Page Access Token"
+    * FB_VERIFY_TOKEN="Your Facebook Verify Token"
+4. Start app with `npm start` 
 
 ## Deploy with Docker
 
