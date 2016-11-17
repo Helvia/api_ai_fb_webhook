@@ -56,7 +56,7 @@ function sendQuickReplyQuestion(recipientId, question, answers) {
             id: recipientId
         },
         message: {
-            text: question,
+            text: question || 'Please choose one:',
             quick_replies: quick_replies
         }
     };
@@ -148,7 +148,7 @@ function sendCardMessage(recipientId, title, subtitle, imageUrl, buttons) {
                 payload: {
                     template_type: "generic",
                     elements: [{
-                        title: title || 'Please choose one:',
+                        title: title,
                         subtitle: subtitle,
                         image_url: imageUrl,
                         buttons: buttons
