@@ -1,0 +1,27 @@
+{
+  "name": "api-ai-fb-webhook",
+  "version": "1.0.0",
+  "description": "API.AI-Facebook Integration Webhook",
+  "main": "app/app.js",
+  "scripts": {
+    "start": "node app/app.js",
+    "test": "mocha"
+  },
+  "author": "Dimi Balaouras <dimi@helvia.io>",
+  "license": "ISC",
+  "dependencies": {
+    "apiai": "^3.0.2 ",
+    "async": "^2.0.x",
+    "body-parser": "~1.15.1",
+    "express": "~4.13.4",
+    "json-bigint": "^0.2.0",
+    "node-uuid": "^1.4.7",
+    "request": "^2.78.0",
+    "mocha": "^3.1.2",
+    "chai": "^3.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/api-ai/api-ai-facebook"
+  }
+}
