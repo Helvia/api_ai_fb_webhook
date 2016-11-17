@@ -37,13 +37,11 @@ function processFacebookEvent(event) {
     }
 
     if (text) {
-        
+
         // Store a new session for this sender
         if (!sessionIds.has(sender)) {
             sessionIds.set(sender, uuid.v1());
         }
-
-        console.log("Got text from Facebook: ", text);
 
         fbClient.userInfoRequest(sender)
             .then(userInfoStr=> {

@@ -104,7 +104,6 @@ function userInfoRequest(userId) {
                     console.error('Error while userInfoRequest: ', error);
                     reject(error);
                 } else {
-                    console.log('userInfoRequest result: ', response.body);
                     resolve(response.body);
                 }
             });
