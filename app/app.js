@@ -29,9 +29,15 @@ function processFacebookEvent(event) {
     // Get sender id
     var sender = event.sender.id.toString();
 
+    var text = "";
     if (event.message && event.message.text) {
-        var text = event.message.text;
+        text = event.message.text;
+    } else if (event.payload && event.payload.payload) {
+        text = event.payload.payload;
+    }
 
+    if (text) {
+        
         // Store a new session for this sender
         if (!sessionIds.has(sender)) {
             sessionIds.set(sender, uuid.v1());

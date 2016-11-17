@@ -57,7 +57,7 @@ function sendResponse(sender, message, callback) {
                     buttons.push({
                         type: "postback",
                         title: button.text,
-                        payload: button.text
+                        payload: button.payload || button.text
                     });
                     innerCallback();
                 });
