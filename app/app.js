@@ -32,8 +32,8 @@ function processFacebookEvent(event) {
     var text = "";
     if (event.message && event.message.text) {
         text = event.message.text;
-    } else if (event.payload && event.payload.payload) {
-        text = event.payload.payload;
+    } else if (event.postback && event.postback.payload) {
+        text = event.postback.payload;
     }
 
     if (text) {
