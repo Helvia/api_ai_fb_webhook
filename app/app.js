@@ -44,7 +44,7 @@ function processFacebookEvent(event) {
                 // Initialize userInto
                 let userInfo = {first_name: "friend"};
                 try {
-                    var userInfo = JSON.parse(userInfoStr);
+                    userInfo = JSON.parse(userInfoStr);
                 } catch (err) {
                     console.error("Could not parse userInfoStr: %s", userInfoStr)
                 }
