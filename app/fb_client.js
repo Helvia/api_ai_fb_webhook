@@ -43,7 +43,7 @@ function sendTextMessage(recipientId, messageText, callback) {
  */
 function sendQuickReplyQuestion(recipientId, question, answers) {
 
-    let quick_replies = answers.map((x) => {
+    var quick_replies = answers.map((x) => {
         return {
             "content_type": "text",
             "title": x.text,
@@ -51,7 +51,7 @@ function sendQuickReplyQuestion(recipientId, question, answers) {
         };
     });
 
-    let messageData = {
+    var messageData = {
         recipient: {
             id: recipientId
         },
