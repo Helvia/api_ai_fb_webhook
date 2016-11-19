@@ -97,7 +97,8 @@ function userInfoRequest(userId) {
     return new Promise((resolve, reject) => {
         request({
                 method: 'GET',
-                uri: "https://graph.facebook.com/v2.6/" + userId + "?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=" + FB_PAGE_ACCESS_TOKEN
+                uri: "https://graph.facebook.com/v2.6/" + userId
+                + "?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=" + FB_PAGE_ACCESS_TOKEN
             },
             function (error, response) {
                 if (error) {

@@ -54,11 +54,22 @@ function sendResponse(sender, message, callback) {
             var buttons = [];
             if (misc.isDefined(message.buttons)) {
                 async.eachSeries(message.buttons, (button, innerCallback) => {
-                    buttons.push({
-                        type: "postback",
-                        title: button.text,
-                        payload: button.payload || button.text
-                    });
+                    var payload = button.postback || button.text;
+                    if (payload.match(/http(s)?\:\/\/.*$/)) {
+                        buttons.push({
+                            type: "web_url",
+                            title: button.text,
+                            url: payload
+                        });
+                    } else {
+                        buttons.push({
+                            type: "postback",
+                            title: button.text,
+                            payload: payload
+                        });
+                    }
+
+                    console.info(buttons);
                     innerCallback();
                 });
             }
