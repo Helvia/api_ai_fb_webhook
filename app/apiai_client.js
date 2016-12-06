@@ -20,20 +20,22 @@ function handleApiAiResponse(sender, response, callback) {
         // Load messages
         var messages = response.result.fulfillment.messages;
 
-        // Adding delay between responses
-        var i = 0;
-        async.whilst(
-            function () {
-                return i <= messages.length - 1;
-            },
-            function (innerCallback) {
-                sendResponse(sender, messages[i], function () {
-                    setTimeout(function () {
-                        i++;
-                        innerCallback();
-                    }, 1000);
-                })
-            }, callback);
+        if (messages) {
+            // Adding delay between responses
+            var i = 0;
+            async.whilst(
+                function () {
+                    return i <= messages.length - 1;
+                },
+                function (innerCallback) {
+                    sendResponse(sender, messages[i], function () {
+                        setTimeout(function () {
+                            i++;
+                            innerCallback();
+                        }, 1000);
+                    })
+                }, callback);
+        }
     }
 }
 
